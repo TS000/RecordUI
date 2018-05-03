@@ -8,6 +8,7 @@ injectGlobal`
     height: 100%
     width: 100%
     margin: 0
+    background: grey
     font-family: 
       -apple-system,
       BlinkMacSystemFont,

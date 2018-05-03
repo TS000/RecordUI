@@ -46,6 +46,8 @@ class App extends Component {
 
     this.handleEdit = this.handleEdit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+
+    this.openModal = this.openModal.bind(this)
   }
 
   componentDidMount() {
@@ -73,8 +75,15 @@ class App extends Component {
     })
   }
 
+  openModal(record) {
+    if(record) {
+      this.setState({record})
+    }
+  }
+
   render() {
     return (
+      <div>
       <AppWrap>
         <WrapItem>
           <Header>
@@ -88,10 +97,12 @@ class App extends Component {
           />
 
           <Footer>
-            <p>Thank you!</p>
+            <p>Your collection is amazing.</p>
           </Footer>
         </WrapItem>
       </AppWrap>
+      <Button title='+' handleClick={this.openModal.bind(this, null)} />
+      </div>
     )
   }
 }
