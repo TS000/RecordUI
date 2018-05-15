@@ -1,9 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+import Styled from 'styled-components'
 import FlipMove from 'react-flip-move'
 import RecordItem from './RecordItem'
 
-const RecordList = styled.div`
+const RecordList = Styled.div`
   background-color: grey
   content: ""
   display: table

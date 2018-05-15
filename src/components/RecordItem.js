@@ -36,8 +36,8 @@ export default class RecordItem extends React.Component {
     return (
       <Record>
         <RecordContent>
-          <h4>{record.author}</h4>
-          <p>{record.content}</p>
+          <h4>{record.artist}</h4>
+          <p>{record.title}</p>
         </RecordContent>
         <RecordControl>
           <span onClick={handleEdit.bind(this, record._id)} >H</span>

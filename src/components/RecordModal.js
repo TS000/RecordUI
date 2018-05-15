@@ -5,14 +5,16 @@ import Styled from 'styled-components'
 // Modal custom styles
 // Basically centering stuff
 
-const NuModal = Styled.Modal`
-  top: '50%'
-  left: '50%'
-  right: 'auto
-  bottom: 'auto'
-  marginRight: '-50%'
-  transform: 'translate(-50%, -50%)
-`
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
+  }
+}
 const ModalWrap = Styled.div`
   width: 600px !important
 `
@@ -34,10 +36,11 @@ const ModalButton = Styled.button`
   transition: all 200ms ease-in-out
   outline: none
 `
-const ModalButtonClose = Styled.ModalButton`
-  background: darkred`
+const ModalButtonClose = ModalButton.extend`
+  background: darkred;
+`
 
-export default class ModalComponent extends React.Component {
+export default class RecordModal extends React.Component {
   constructor(props) {
     super(props)
     // Internal state
@@ -67,16 +70,16 @@ export default class ModalComponent extends React.Component {
 
   render() {
     const { modalIsOpen, closeModal } = this.props
-    // Use Nu React Modal
     return (
-      <NuModal
+      <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal.bind(this, null)}
         shouldCloseOnOverlayClick={false}
         contentLabel="Record Modal"
+        style={customStyles}
       >
         <ModalWrap>
-          <ModalTitle className="text-center">Record Form</ModalTitle>
+          <ModalTitle>Record Form</ModalTitle>
           <div>
             <form>
               <div>
@@ -98,21 +101,17 @@ export default class ModalComponent extends React.Component {
                 />
               </div>
               <div>
-                <ModalButton
-                  onClick={closeModal.bind(this, this.state)}
-                >
+                <ModalButton onClick={closeModal.bind(this, this.state)}>
                   Save
                 </ModalButton>
-                <ModalButtonClose
-                  onClick={closeModal.bind(this, null)}
-                >
+                <ModalButtonClose onClick={closeModal.bind(this, null)}>
                   Cancel
                 </ModalButtonClose>
               </div>
             </form>
           </div>
         </ModalWrap>
-      </NuModal>
+      </Modal>
     )
   }
 }

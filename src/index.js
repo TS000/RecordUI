@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, { injectGlobal } from 'styled-components'
-import App from './layouts/app'
+import App from './layouts/App'
 
 injectGlobal`
   body {
