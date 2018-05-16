@@ -8,17 +8,22 @@ const Record = Styled.div`
 `
 const RecordContent = Styled.div`
   color: #444444;
+  padding: 10px;
     h4 {
       text-transform: uppercase;
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #2E6F7D;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #000000;
+      margin: 0;
     }
 `
 
 const RecordControl = Styled.div`
-  padding-left: 30px;
+      position: relative;
+    float: right;
+    right: 16px;
+    bottom: 20px;
     span:first-child:hover {
     color: #2E6F7D;
     cursor: pointer;
@@ -40,8 +45,8 @@ export default class RecordItem extends React.Component {
           <p>{record.title}</p>
         </RecordContent>
         <RecordControl>
-          <span onClick={handleEdit.bind(this, record._id)} >H</span>
-          <span onClick={handleDelete.bind(this, record._id)}>G</span>
+          <span onClick={handleEdit.bind(this, record._id)} >O</span>
+          <span onClick={handleDelete.bind(this, record._id)}>X</span>
         </RecordControl>
       </Record>
     )

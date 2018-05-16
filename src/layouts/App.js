@@ -5,33 +5,51 @@ import Button from '../components/reusable/Button'
 import Loading from '../components/reusable/Loading'
 import RecordList from '../components/RecordList'
 import RecordModal from '../components/RecordModal'
+import Particles from '../components/reusable/Particles'
 
 const AppWrap = Styled.div`
   background: #FFFFFF;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.30);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   border-radius: 10px;
   margin-top: 70px;
   padding: 0;
+  position: absolute;
+  margin: 0 auto;
+  top: 20%;
+  width: 350px;
+  left: 0;
+  right: 0;
+  &:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
 `
 const WrapItem = Styled.div`
 `
+const HomeWrap = Styled.div`
+  width: 100%
+  height: auto
+  background: #000000
+`
 const Header = Styled.div`
-  background: #795548;
+  background: #C9D787;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 10px 15px;
-    h2 {
+    h1 {
       margin: 0;
-      color: #fff;
+      color: #e7ff58;
       letter-spacing: 1.6px;
-      font-size: 24px;
+      font-size: 30px;
+      text-shadow: 1px 2px 1px #000000, 2px 2px 5px #00000075;
   }
 `
 const Footer = Styled.div`
   background: whitesmoke;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 10px 15px;
+  height: 50px;
+  position: relative;
   `
 
 class App extends Component {
@@ -122,11 +140,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <HomeWrap>
         <AppWrap>
           <WrapItem>
             <Header>
-              <h2>Records</h2>
+            <Particles />
+              <h1>Crateless</h1>
             </Header>
             {}
             <RecordList
@@ -136,7 +155,7 @@ class App extends Component {
             />
 
             <Footer>
-              <p>Your collection is amazing.</p>
+              <Button title="+" handleClick={this.openModal.bind(this, null)} />
             </Footer>
           </WrapItem>
         </AppWrap>
@@ -146,9 +165,7 @@ class App extends Component {
             record={this.state.record}
             closeModal={this.closeModal}
         />
-        
-        <Button title="+" handleClick={this.openModal.bind(this, null)} />
-      </div>
+      </HomeWrap>
     )
   }
 }

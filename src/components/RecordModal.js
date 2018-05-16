@@ -79,7 +79,7 @@ export default class RecordModal extends React.Component {
         style={customStyles}
       >
         <ModalWrap>
-          <ModalTitle>Record Form</ModalTitle>
+          <ModalTitle>Record Info</ModalTitle>
           <div>
             <form>
               <div>
