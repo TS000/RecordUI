@@ -16,7 +16,7 @@ const AppWrap = Styled.div`
   padding: 0;
   position: absolute;
   margin: 0 auto;
-  top: 20%;
+  top: 5%;
   width: 350px;
   left: 0;
   right: 0;
@@ -35,13 +35,15 @@ const Header = Styled.div`
   background: #C9D787;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 10px 15px;
+  padding-bottom: 10px;
     h1 {
-      margin: 0;
       color: #e7ff58;
-      letter-spacing: 1.6px;
-      font-size: 30px;
-      text-shadow: 1px 2px 1px #000000, 2px 2px 5px #00000075;
+    letter-spacing: 1.6px;
+    font-size: 30px;
+    position: absolute;
+    top: 125px;
+    left: 10px;
+    text-shadow: 1px 2px 1px #000000, 2px 2px 5px #00000075;
   }
 `
 const Footer = Styled.div`

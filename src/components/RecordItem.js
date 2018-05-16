@@ -1,4 +1,5 @@
 import React from 'react'
+import FontAwesome from 'react-fontawesome'
 import Styled from 'styled-components'
 
 const Record = Styled.div`
@@ -22,13 +23,18 @@ const RecordContent = Styled.div`
 const RecordControl = Styled.div`
       position: relative;
     float: right;
-    right: 16px;
+    right: 4px;
     bottom: 20px;
+    span:first-child {
+      margin-right: 5px;
+    }
     span:first-child:hover {
-    color: #2E6F7D;
+    color: green;
     cursor: pointer;
+    
   }
-  span:last-child:hover {
+  span:last-child {
+    &:hover {
     color: red;
     cursor: pointer;
   }
@@ -45,8 +51,8 @@ export default class RecordItem extends React.Component {
           <p>{record.title}</p>
         </RecordContent>
         <RecordControl>
-          <span onClick={handleEdit.bind(this, record._id)} >O</span>
-          <span onClick={handleDelete.bind(this, record._id)}>X</span>
+          <span onClick={handleEdit.bind(this, record._id)} ><FontAwesome name='edit' /></span>
+          <span onClick={handleDelete.bind(this, record._id)}><FontAwesome name='trash' /></span>
         </RecordControl>
       </Record>
     )
