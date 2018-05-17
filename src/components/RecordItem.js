@@ -10,6 +10,7 @@ const Record = Styled.div`
 const RecordContent = Styled.div`
   color: #444444;
   padding: 10px;
+  position: relative;
     h4 {
       text-transform: uppercase;
       font-size: 15px;
@@ -18,6 +19,20 @@ const RecordContent = Styled.div`
       color: #000000;
       margin: 0;
     }
+    h3 {
+      color: #FF005F;
+      position: absolute;
+      right: 10px;
+      top: -12px;
+      text-transform: capitalize;
+    }
+    span {
+      font-size: 12px;
+      text-transform: capitalize;
+      float: right;
+      position: relative;
+      bottom: 15px;
+    }
 `
 
 const RecordControl = Styled.div`
@@ -25,10 +40,11 @@ const RecordControl = Styled.div`
     float: right;
     right: 4px;
     bottom: 20px;
-    span:first-child {
+    span:first-child  {
       margin-right: 5px;
+
     }
-    span:nth-child(1):hover {
+    span:first-child:hover {
     color: green;
     cursor: pointer;
     
@@ -48,7 +64,9 @@ export default class RecordItem extends React.Component {
       <Record>
         <RecordContent>
           <h4>{record.artist}</h4>
-          <p>{record.title}</p>
+          <p>{record.title}<span>{record.genre}</span></p>
+          <h3>{record.bpm}</h3>
+
         </RecordContent>
         <RecordControl>
           <span onClick={handleEdit.bind(this, record._id)} ><FontAwesome name='edit' /></span>

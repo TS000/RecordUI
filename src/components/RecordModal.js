@@ -59,18 +59,26 @@ export default class RecordModal extends React.Component {
     this.state = {
       artist: '',
       title: '',
+      bpm: '',
+      genre: '',
       _id: ''
     }
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   handleInputChange(e) {
-    // Re-binding artist and title values
+    // Re-binding values
     if (e.target.id === 'artist') {
       this.setState({ artist: e.target.value })
     }
     if (e.target.id === 'title') {
       this.setState({ title: e.target.value })
+    }
+     if (e.target.id === 'bpm') {
+      this.setState({ bpm: e.target.value })
+    }
+    if (e.target.id === 'genre') {
+      this.setState({ genre: e.target.value })
     }
   }
 
@@ -110,6 +118,24 @@ export default class RecordModal extends React.Component {
                   onChange={this.handleInputChange}
                   cols="30"
                   id="title"
+                />
+              </LabelWrap>
+              <LabelWrap>
+                <label>Genre</label>
+                <input
+                  value={this.state.genre}
+                  onChange={this.handleInputChange}
+                  cols="30"
+                  id="genre"
+                />
+              </LabelWrap>
+               <LabelWrap>
+                <label>BPM</label>
+                <input
+                  value={this.state.bpm}
+                  onChange={this.handleInputChange}
+                  cols="30"
+                  id="bpm"
                 />
               </LabelWrap>
               <div>

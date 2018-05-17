@@ -18,7 +18,7 @@ const AppWrap = Styled.div`
   position: absolute;
   margin: 0 auto;
   top: 5%;
-  width: 350px;
+  width: 420px;
   left: 0;
   right: 0;
 `
@@ -63,6 +63,7 @@ class App extends Component {
       record: {
         artist: '',
         title: '',
+        bpm: '',
         _id: undefined
       }
     }
@@ -118,6 +119,7 @@ class App extends Component {
       record: {
         artist: '',
         title: '',
+        bpm: '',
         _id: undefined
       }
     })

@@ -57,6 +57,8 @@ class App extends Component {
       record: {
         artist: '',
         title: '',
+        bpm: '',
+        genre: '',
         _id: undefined
       }
     }
@@ -112,6 +114,8 @@ class App extends Component {
       record: {
         artist: '',
         title: '',
+        bpm: '',
+        genre: '',
         _id: undefined
       }
     })
