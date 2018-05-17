@@ -8,6 +8,7 @@ import Styled from 'styled-components'
 const customStyles = {
   content: {
     top: '50%',
+    borderRadius: '10px',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
@@ -24,7 +25,7 @@ const ModalTitle = Styled.div`
 `
 const ModalButton = Styled.button`
   display: inline-block
-  background: #2E6F7D
+  background: #4CAF50
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.50)
   border:none
   width: 46%
@@ -36,8 +37,19 @@ const ModalButton = Styled.button`
   transition: all 200ms ease-in-out
   outline: none
 `
+
+//extending CSS classes is awesome
 const ModalButtonClose = ModalButton.extend`
-  background: darkred;
+  background: #F44336;
+`
+
+const LabelWrap = Styled.div`
+  display: inline-block;
+  margin-left: 20px;
+  input {
+    border: 1px solid #bebebe;
+    margin: 15px;
+  }
 `
 
 export default class RecordModal extends React.Component {
@@ -82,7 +94,7 @@ export default class RecordModal extends React.Component {
           <ModalTitle>Record Info</ModalTitle>
           <div>
             <form>
-              <div>
+              <LabelWrap>
                 <label>Artist</label>
                 <input
                   type="text"
@@ -90,16 +102,16 @@ export default class RecordModal extends React.Component {
                   onChange={this.handleInputChange}
                   id="artist"
                 />
-              </div>
-              <div>
+              </LabelWrap>
+              <LabelWrap>
                 <label>Title</label>
-                <textarea
+                <input
                   value={this.state.title}
                   onChange={this.handleInputChange}
                   cols="30"
                   id="title"
                 />
-              </div>
+              </LabelWrap>
               <div>
                 <ModalButton onClick={closeModal.bind(this, this.state)}>
                   Save

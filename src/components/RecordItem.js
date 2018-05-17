@@ -21,14 +21,14 @@ const RecordContent = Styled.div`
 `
 
 const RecordControl = Styled.div`
-      position: relative;
+    position: relative;
     float: right;
     right: 4px;
     bottom: 20px;
     span:first-child {
       margin-right: 5px;
     }
-    span:first-child:hover {
+    span:nth-child(1):hover {
     color: green;
     cursor: pointer;
     

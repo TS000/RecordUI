@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { Security, ImplicitCallback } from '@okta/okta-react'
 import Axios from 'axios'
 import Styled from 'styled-components'
-import Button from '../components/reusable/Button'
-import Loading from '../components/reusable/Loading'
-import RecordList from '../components/RecordList'
-import RecordModal from '../components/RecordModal'
-import Particles from '../components/reusable/Particles'
+import Button from './reusable/Button'
+import Loading from './reusable/Loading'
+import RecordList from './RecordList'
+import RecordModal from './RecordModal'
 
 const AppWrap = Styled.div`
   background: #FFFFFF;
@@ -23,11 +22,6 @@ const AppWrap = Styled.div`
   right: 0;
 `
 const WrapItem = Styled.div`
-`
-const HomeWrap = Styled.div`
-  width: 100%
-  height: auto
-  background: #C9D787
 `
 const Header = Styled.div`
  background: #C9D787;
@@ -140,8 +134,7 @@ class App extends Component {
 
   render() {
     return (
-      <HomeWrap>
-<Particles />
+      <div>
         <AppWrap>
           <WrapItem>
             <Header>
@@ -166,7 +159,7 @@ class App extends Component {
             record={this.state.record}
             closeModal={this.closeModal}
         />
-      </HomeWrap>
+        </div>
     )
   }
 }

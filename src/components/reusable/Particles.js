@@ -10,10 +10,10 @@ export default class ShinyBits extends React.Component{
               params={{
                     particles: {
                         number: {
-                            value: 10,
+                            value: 80,
                             density: {
                                 enable: true,
-                                value_area: 100
+                                value_area: 800
                             }
                         },
                          opacity: {
@@ -70,7 +70,7 @@ export default class ShinyBits extends React.Component{
       },
       onclick: {
         enable: true,
-        mode: 'push'
+        mode: 'repulse'
       },
       resize: true
     },
@@ -89,11 +89,6 @@ export default class ShinyBits extends React.Component{
       },
       polygon: {
         nb_sides: 10
-      },
-      image: {
-        src: 'http://bpic.588ku.com/element_pic/16/11/10/f89bd6a8b717087f81ef2756420bcf80.jpg',
-        width: 1000,
-        height: 1000
       }
     },
       bubble: {
