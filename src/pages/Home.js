@@ -1,41 +1,51 @@
-import React, { Component } from 'react';
-import { withAuth } from '@okta/okta-react';
+import React, { Component } from 'react'
+import Styled from 'styled-components'
 
-export default withAuth(class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { authenticated: null };
-    this.checkAuthentication = this.checkAuthentication.bind(this);
-    this.checkAuthentication();
-    this.login = this.login.bind(this);
-    this.logout = this.logout.bind(this);
-  }
+import CTA from '../components/reusable/CTA'
+import Banner from '../components/reusable/Banner'
 
-  async checkAuthentication() {
-    const authenticated = await this.props.auth.isAuthenticated();
-    if (authenticated !== this.state.authenticated) {
-      this.setState({ authenticated });
-    }
-  }
+const Row = Styled.div`
+  display: flex
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+`
 
-  componentDidUpdate() {
-    this.checkAuthentication();
-  }
-
-  async login() {
-    // Redirect to '/' after login
-    this.props.login('/');
-  }
-
-  async logout() {
-    // Redirect to '/' after logout
-    this.props.logout('/');
-  }
-
+export default class Home extends Component {
   render() {
-    if (this.state.authenticated === null) return null;
-    return this.state.authenticated ?
-      <button onClick={this.logout}>Logout</button> :
-      <button onClick={this.login}>Login</button>;
+    return (
+      <div>
+        <Row>
+        <CTA innerTitle='Science' />
+          <CTA innerTitle='Meets' />
+          <CTA innerTitle='Collection' />
+        </Row>
+        <Row>
+          <Banner light innerTitle='Welcome' innerBody='Things to know.' />
+        </Row>
+        <Row>
+         <CTA innerTitle='Your' />
+          <CTA innerTitle='Collection'/>
+          <CTA innerTitle='At All'/>
+          <CTA innerTitle='Times'/>
+        </Row>
+        <Banner />
+        <Row>
+        <CTA innerTitle='Science' />
+          <CTA innerTitle='Meets' />
+          <CTA innerTitle='Collection' />
+        </Row>
+        <Row>
+          <Banner light innerTitle='Welcome' innerBody='Things to know.' />
+        </Row>
+        <Row>
+         <CTA innerTitle='Your' />
+          <CTA innerTitle='Collection'/>
+          <CTA innerTitle='At All'/>
+          <CTA innerTitle='Times'/>
+        </Row>
+      </div>
+    )
   }
-});
+}

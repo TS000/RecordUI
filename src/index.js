@@ -8,7 +8,7 @@ injectGlobal`
     height: 100%
     width: 100%
     margin: 0
-    background: #bebebe
+    background: #FF8C00
     font-family: 
       -apple-system,
       BlinkMacSystemFont,
@@ -22,9 +22,9 @@ injectGlobal`
 `
 
 const Wrap = styled.div`
-  display: flex
-  align-items: center
-  justify-content: center
+  display: block
+  background-color: #FF8C00;
+
 
   >p {
     font-size: 200px
