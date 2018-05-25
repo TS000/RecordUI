@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Security, ImplicitCallback } from '@okta/okta-react'
 import Axios from 'axios'
 import Styled from 'styled-components'
 import Button from '../components/reusable/Button'

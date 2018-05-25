@@ -13,7 +13,7 @@ import Crate from '../pages/Crate'
 import Home from '../pages/Home'
 import ErrorPage from '../pages/Error'
 
-import Logo from '../../dist/img/cloud.png'
+import Logo from '../img/cloud.png'
 
 const Navigation = Styled.ul`
   position: fixed;

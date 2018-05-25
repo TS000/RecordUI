@@ -5,7 +5,7 @@ import CTA from '../components/reusable/CTA'
 import Banner from '../components/reusable/Banner'
 
 // I designed and created all assets (minus Font Awesome)
-import imgRekids from '.../../../dist/img/rekids.png'
+import imgRekids from '../img/rekids.png'
 
 const Row = Styled.div`
   display: flex
