@@ -161,7 +161,7 @@ class Crate extends Component {
             />
 
             <Footer>
-              <Button title="+" handleClick={this.openModal.bind(this, null)} />
+              <Button right title="+" handleClick={this.openModal.bind(this, null)} />
             </Footer>
           </WrapItem>
         </AppWrap>

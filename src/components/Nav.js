@@ -1,17 +1,6 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react'
 import Styled from 'styled-components'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  NavLink,
-  Switch
-} from 'react-router-dom'
-
-import Crate from '../pages/Crate'
-import Home from '../pages/Home'
-import ErrorPage from '../pages/Error'
+import { NavLink } from 'react-router-dom'
 
 import Logo from '../img/cloud.png'
 

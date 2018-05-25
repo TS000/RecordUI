@@ -25,8 +25,6 @@ const Banner = Styled.div`
     color: ${props => (props.hero ? '#fff' : '#000000')};
   }
   
-
-
     img {
       width: 100%
     }
@@ -36,10 +34,18 @@ const Inner = Styled.div`
   margin: 0 auto
   text-align: center
   font-size: 100%
-
 `
 
-export default ({ innerTitle, innerBody, half, light, img, imgAlt, textColorWhite, hero }) => {
+export default ({ 
+  innerTitle, 
+  innerBody, 
+  half, 
+  light, 
+  img, 
+  imgAlt, 
+  textColorWhite, 
+  hero 
+}) => {
   return (
     <Banner hero={hero} textColorWhite={textColorWhite} half={half} light={light}>
       <img src={img} alt={imgAlt} />

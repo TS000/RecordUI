@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import Styled, { injectGlobal } from 'styled-components'
 import {
   BrowserRouter as Router,
   Route,
-  NavLink,
   Switch
 } from 'react-router-dom'
 
@@ -14,38 +12,38 @@ import ErrorPage from '../pages/Error'
 import Footer from '../components/Footer'
 import Navigation from '../components/Nav'
 
+const FullWidth = Styled.div`
+  width: 100%
+`
+
+// On MVP projects I like to use native fonts that look decent on any system
+// A bit of math is used to keep text fluid between views (calc)
 injectGlobal`
-  body {
+  html {
     height: 100%
     width: 100%
     margin: 0
     background: #FF8C00
-    font-size: 100%
+    font-size: 16px
     font-family: 
       -apple-system,
       BlinkMacSystemFont,
-      Segoe UI,Roboto,
+      Segoe UI,
+      Roboto,
       Oxygen-Sans,
       Ubuntu,
       Cantarell,
       Helvetica Neue,
       sans-serif
+
+    @media (min-width: 320px) {
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+
+    @media screen and (min-width: 1000px) {
+      font-size: 22px;
+    }
   }
-`
-
-const Wrap = Styled.div`
-  display: block
-  background-color: #FF8C00;
-
-
-  >p {
-    font-size: 200px
-    color: black
-  }
-`
-
-const FullWidth = Styled.div`
-width: 100%
 `
 
 console.log(
