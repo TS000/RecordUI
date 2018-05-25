@@ -13,63 +13,73 @@ import Crate from '../pages/Crate'
 import Home from '../pages/Home'
 import ErrorPage from '../pages/Error'
 
+import Logo from '../../dist/img/cloud.png'
+
 const Navigation = Styled.ul`
-list-style: none;
-margin: 0;
+  position: fixed;
+  top: 0;
+  padding: 0 15rem;
+  z-index: 100;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  background: #04756F;
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border-bottom: 4px solid black
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
-background: deepskyblue;
+  a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: #000000;
+    font-weight: 700
+    transition: ease all .2s;
+      &:hover {
+        background: #2E0927;
+        color: white;
+      }
 
-display: -webkit-box;
-display: -moz-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
--webkit-flex-flow: row wrap;
-justify-content: flex-start;
+    @media (max-width: 800px) {
 
-a {
-text-decoration: none;
-display: block;
-padding: 1em;
-color: white;
-&:hover {
-background: red;
-}
-
-@media (max-width: 800px) {
-
-justify-content: space-around;
-}
-}
+      justify-content: space-around;
+    }
+  }
 
 @media (max-width: 600px) {
 
--webkit-flex-flow: column wrap;
-flex-flow: column wrap;
-padding: 0;
-a {
-text-align: center;
-padding: 10px;
-border-top: 1px solid rgba(255,255,255,0.3);
-border-bottom: 1px solid rgba(0,0,0,0.1);
+  flex-flow: column wrap;
+  padding: 0;
+    a {
+      text-align: center;
+      padding: 10px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+      li:last-of-type a {
+        border-bottom: none;
+      }
 }
-li:last-of-type a {
-border-bottom: none;
-}
-}
-
 `
 
-const FullWidth = Styled.div `
-width: 100%
+const LogoWrap = Styled.div `
+  img {
+    width: 55px;
+    padding: 5px;
+}
 `
 
-export default class Nav extends Component {
-  render() {
+export default () => {
     return (
-      <Router>
-        <FullWidth>
           <Navigation>
+          <li>
+          <LogoWrap>
+            <img src={Logo} alt="Logo"/>
+          </LogoWrap>
+          </li>
             <li>
               <NavLink exact to="/" activeClassName="active">
                 Home
@@ -81,12 +91,5 @@ export default class Nav extends Component {
               </NavLink>
             </li>
           </Navigation>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/crate" component={Crate} />
-          </Switch>
-        </FullWidth>
-      </Router>
     )
-  }
 }

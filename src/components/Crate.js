@@ -16,7 +16,7 @@ const AppWrap = Styled.div`
   padding: 0;
   position: absolute;
   margin: 0 auto;
-  top: 5%;
+  top: 10%;
   width: 350px;
   left: 0;
   right: 0;
@@ -46,7 +46,7 @@ const Footer = Styled.div`
   position: relative;
   `
 
-class App extends Component {
+class Crate extends Component {
   constructor() {
     super()
 
@@ -142,8 +142,8 @@ class App extends Component {
         <AppWrap>
           <WrapItem>
             <Header>
-            
               <h1>Crateless</h1>
+              <p>(this app is currently in development, with the intial data set projected to be completed by winter 2018. The site was created in ≈10 hours)</p>
             </Header>
             {}
             <RecordList
@@ -159,13 +159,13 @@ class App extends Component {
         </AppWrap>
 
         <RecordModal
-            modalIsOpen={this.state.modalIsOpen}
-            record={this.state.record}
-            closeModal={this.closeModal}
+          modalIsOpen={this.state.modalIsOpen}
+          record={this.state.record}
+          closeModal={this.closeModal}
         />
-        </div>
+      </div>
     )
   }
 }
 
-export default App
+export default Crate

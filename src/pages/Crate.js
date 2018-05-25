@@ -8,7 +8,7 @@ import RecordList from '../components/RecordList'
 import RecordModal from '../components/RecordModal'
 import Particles from '../components/reusable/Particles'
 
-const AppWrap = Styled.div`
+const AppWrap = Styled.div `
   background: #FFFFFF;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -17,7 +17,7 @@ const AppWrap = Styled.div`
   padding: 0;
   position: absolute;
   margin: 0 auto;
-  top: 5%;
+  top: 10%;
   width: 95%;
   left: 0;
   right: 0;
@@ -25,33 +25,35 @@ const AppWrap = Styled.div`
 `
 const WrapItem = Styled.div`
 `
-const HomeWrap = Styled.div`
+const HomeWrap = Styled.div `
   width: 100%
   height: auto
   background: #C9D787
 `
-const Header = Styled.div`
- background: #C9D787;
+const Header = Styled.div `
+  background: #C9D787;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding-bottom: 10px;
-  height: 50px;
+  height: 100px;
     h1 {
       color: #000000;
     letter-spacing: 1.6px;
     font-size: 30px;
-    position: absolute;
-    top: 0px;
-    left: 10px;
   }
 `
-const Footer = Styled.div`
+const Footer = Styled.div `
   background: whitesmoke;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 50px;
   position: relative;
-  `
+`
+const InnerHeader = Styled.div `
+  position: absolute;
+  top: 0px;
+  left: 10px;
+`
 
 class Crate extends Component {
   constructor() {
@@ -148,7 +150,10 @@ class Crate extends Component {
           <WrapItem>
             <Header>
               <Particles />
+              <InnerHeader>
               <h1>Crateless</h1>
+              <p>(This app is currently in development, with the intial model projected to be completed by winter 2018. The site was created in ≈10 hours, including the serverless API)</p>
+              </InnerHeader>
             </Header>
             <RecordList
               records={this.state.records}

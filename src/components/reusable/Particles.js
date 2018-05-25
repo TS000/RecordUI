@@ -7,6 +7,10 @@ export default class ShinyBits extends React.Component {
       <Particles
         params={{
           particles: {
+            canvas: {
+              w: '100%',
+              h: '100%'
+            },
             number: {
               value: 1,
               density: {
@@ -86,7 +90,7 @@ export default class ShinyBits extends React.Component {
                   color: '#FF8598'
                 },
                 polygon: {
-                  nb_sides: 10
+                  nb_sides: 2
                 }
               },
               bubble: {
