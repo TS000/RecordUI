@@ -168,29 +168,24 @@ class Crate extends Component {
                 <p>
                   (This app is currently in development, with the intial model
                   projected to be completed by winter 2018. The site was created
-                  in ≈10 hours, including the serverless API)
+                  in ≈15 hours, including the serverless API)
                 </p>
               </InnerHeader>
             </Header>
-            {!this.state.isLoading
-              ? <Loading />
-              :
-              <div>
-                <RecordList
-                  records={this.state.records}
-                  handleEdit={this.handleEdit}
-                  handleDelete={this.handleDelete}
-                />
+            {!this.state.isLoading && <Loading />}
+            <RecordList
+              records={this.state.records}
+              handleEdit={this.handleEdit}
+              handleDelete={this.handleDelete}
+            />
 
-                <Footer>
-                  <Button
-                    right
-                    title="+"
-                    handleClick={this.openModal.bind(this, null)}
-                  />
-                </Footer>
-              </div>
-            }
+            <Footer>
+              <Button
+                right
+                title="+"
+                handleClick={this.openModal.bind(this, null)}
+              />
+            </Footer>
           </WrapItem>
         </AppWrap>
 

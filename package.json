@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.4.0",
+    "react-burger-menu": "^2.4.4",
     "react-dom": "^16.4.0",
     "react-flip-move": "^3.0.2",
     "react-fontawesome": "^1.6.1",

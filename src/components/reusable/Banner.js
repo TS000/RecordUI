@@ -15,7 +15,7 @@ const Banner = Styled.div`
   background-color: ${props => (props.light ? '#FF2D00' : '#D90000')};
   width: ${props => (props.half ? '60rem' : 'inherit')};
   color: ${props => (props.white ? '#fff' : '#000000')};
-  margin: ${props => (props.hero ? '2rem 0rem;' : '2rem')};
+  margin: ${props => (props.hero ? '0rem;' : '2rem')};
   font-size: ${props => (props.hero ? '5em' : '2em')};
   text-shadow: ${props => (
     props.hero ? '4px 2px 0px #fff, 10px 6px 0px rgba(0,0,0,0.85);' : 'inital'

@@ -6,7 +6,6 @@ import Banner from '../components/reusable/Banner'
 
 // All images have been compressed with Image Magick
 import imgRekids from '../img/rekids.png'
-import imgStack from '../img/stack.png'
 import imgHard from '../img/hard.png'
 import imgHard2 from '../img/hard2.png'
 import imgTyler from '../img/tyler.png'
@@ -14,6 +13,7 @@ import imgCondesa from '../img/condesa2.png'
 import imgRoom from '../img/room.png'
 import imgOrto from '../img/orto.png'
 import imgCrate from '../img/crate.png'
+import imgTylerDJ from '../img/tylerDJ.png'
 
 const Row = Styled.div`
   display: flex
@@ -39,29 +39,30 @@ export default class Home extends Component {
           light
           innerTitle="your collection"
           innerBody="leveraged with AI & the cloud"
+          imgAlt="Close up picture of vinyl records"
           img={imgRekids}
         />
         <Row>
-          <CTA innerTitle="price alerts" img white img={imgTyler} />
-          <CTA innerTitle="collection control" img white img={imgCondesa} />
-          <CTA innerTitle="iOS & android" img white img={imgHard} />
+          <CTA innerTitle="price alerts" img white imgAlt="Tyler Snow at Weird Touch" img={imgTyler} />
+          <CTA innerTitle="collection control" img white imgAlt="Condessa Mixers" img={imgCondesa} />
+          <CTA innerTitle="iOS & android" img white imgAlt="Hard Wax Berlin listening stations" img={imgHard} />
         </Row>
         <RowLarge>
           <Banner light half img={imgRoom} />
-          <Banner light half innerTitle="dig with it" innerBody="q4 2018" />
+          <Banner light half innerTitle="dig with it" imAlt="Massive vinyl collection"innerBody="q4 2018" />
         </RowLarge>
         <Row>
-          <CTA innerTitle="1. take a photo of record" img white img={imgCrate} />
-          <CTA innerTitle="2. crateless updates your crate" img white img={imgOrto} />
-          <CTA innerTitle="3. instant info on your record" img white img={imgHard} />
+          <CTA innerTitle="1. take a photo of a record" img white imgAlt="Records in a imgCrate" img={imgCrate} />
+          <CTA innerTitle="2. crateless updates your crate" img white imgAlt="Ortofon and Technics 1200mk5" img={imgOrto} />
+          <CTA innerTitle="3. instant info on your record" img white imgAlt="Stack of vinyl records" img={imgTylerDJ} />
         </Row>
         <RowLarge>
-        <Banner light innerTitle="a personal assistant for your vinyl collection" white img={imgHard2} />
+        <Banner light innerTitle="a personal assistant for your vinyl collection" white imgAlt="Woman shopping at Hard Wax Berlin" img={imgHard2} />
         </RowLarge>
         <Row>
-          <CTA innerTitle="records" img white img={imgHard} />
-          <CTA innerTitle="meet" img white img={imgHard} />
-          <CTA innerTitle="science" img white img={imgHard} />
+          <CTA innerTitle="4. check market prices" img white imgAlt="Condessa Mixers" img={imgCondesa} />
+          <CTA innerTitle="5. order records" img white imgAlt="" imgAlt="Hard Wax Berlin listening stations" img={imgHard} />
+          <CTA innerTitle="6. sell records" img white imgAlt="Tyler Snow at Weird Touch" img={imgTyler} />
         </Row>
       </div>
     )
