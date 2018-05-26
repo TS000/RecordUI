@@ -37,8 +37,9 @@ export default class Home extends Component {
         <Banner
           hero
           light
-          innerTitle="your collection"
-          innerBody="leveraged with AI & the cloud"
+          white
+          innerTitle="crateless"
+          innerBody="your record collection + AI"
           imgAlt="Close up picture of vinyl records"
           img={imgRekids}
         />

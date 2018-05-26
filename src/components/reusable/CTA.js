@@ -33,7 +33,11 @@ const CallToAction = Styled.div`
       }
 
       img {
-        width: 160%
+        width: 150%;
+        
+        @media (min-width: 600px) {
+          width: 160%;
+          }
 
         &:hover {
           transition: ease all .2s;

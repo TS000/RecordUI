@@ -22,10 +22,10 @@ const Banner = Styled.div`
   )};
 
   p {
-    text-shadow: none;
+    text-shadow: ${props => (props.hero ? '7px 3px 0px rgba(0,0,0,0.85)' : 'none')};
     color: ${props => (props.hero ? '#fff' : '#000000')};
     font-weight: 600;
-    font-size: 16px;
+    font-size: 4rem;
   }
   
     img {
