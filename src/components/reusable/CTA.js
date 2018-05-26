@@ -20,10 +20,16 @@ const CallToAction = Styled.div`
     height: ${props => (props.small ? '15em' : '20em')};
 
       h2 {
-        position: absolute
-        margin: 0
-        font-size: 3rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        font-size: 4rem;
         color: ${props => (props.white ? '#fff' : '#000000')};
+
+        @media (min-width: 600px) {
+          margin: 0;
+          font-size: 2rem;
       }
 
       img {
