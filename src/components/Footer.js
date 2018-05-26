@@ -5,6 +5,7 @@ import Styled from 'styled-components'
 const Footer = Styled.div`
 list-style: none;
   margin: 0;
+  height: 50px;
   background: #2E0927;
   display: flex;
   flex-flow: row wrap;

@@ -11,11 +11,7 @@ import Navigation from '../components/Nav'
 
 const FullWidth = Styled.div`
   width: 100%;
-  margin-bottom: 40px;
-
-    &:after {
-      content: "";
-      display: block;
+  min-height: calc(100vh - 70px);
     }
 `
 

@@ -15,9 +15,8 @@ const AppWrap = Styled.div`
   border-radius: 10px;
   margin-top: 70px;
   padding: 0;
-  position: absolute;
-  margin: 0 auto;
-  top: 10%;
+  position: relative;
+  margin: 50px auto;
   width: 320px;
   left: 0;
   right: 0;
@@ -172,7 +171,7 @@ class Crate extends Component {
                 </p>
               </InnerHeader>
             </Header>
-            {!this.state.isLoading && <Loading />}
+            
             <RecordList
               records={this.state.records}
               handleEdit={this.handleEdit}
