@@ -58,7 +58,7 @@ const Navigation = Styled.ul`
 }
 `
 
-const LogoWrap = Styled.div `
+const LogoWrap = Styled.div`
 text-align: center;
   img {
     width: 40px;
@@ -71,23 +71,28 @@ text-align: center;
 `
 
 export default () => {
-    return (
-          <Navigation>
-          <li>
-          <LogoWrap>
-            <img src={Logo} alt="Logo"/>
-          </LogoWrap>
-          </li>
-            <li>
-              <NavLink exact to="/" activeClassName="active">
-                <span>Home</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/crate" activeClassName="active">
-                <span>Crate</span>
-              </NavLink>
-            </li>
-          </Navigation>
-    )
+  return (
+    <Navigation>
+      <li>
+        <LogoWrap>
+          <img src={Logo} alt="Logo" />
+        </LogoWrap>
+      </li>
+      <li>
+        <NavLink exact to="/" activeClassName="active">
+          <span>Home</span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/crate" activeClassName="active">
+          <span>Crate</span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/about" activeClassName="active">
+          <span>About</span>
+        </NavLink>
+      </li>
+    </Navigation>
+  )
 }

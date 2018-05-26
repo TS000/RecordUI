@@ -50,7 +50,7 @@ list-style: none;
 
 export default ({ innerTitle, innerBody, half, light }) => {
   return (
-   <div>
+    <div>
       <Footer half={half} light={light}>
         <a href="https://www.facebook.com">
           <li>

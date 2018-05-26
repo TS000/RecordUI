@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import Styled from 'styled-components'
+
 import Button from '../components/reusable/Button'
 import Loading from '../components/reusable/Loading'
 import RecordList from '../components/RecordList'
 import RecordModal from '../components/RecordModal'
 import Particles from '../components/reusable/Particles'
 
-const AppWrap = Styled.div `
+const AppWrap = Styled.div`
   background: #FFFFFF;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -27,14 +28,17 @@ const AppWrap = Styled.div `
 
 }
 `
+
 const WrapItem = Styled.div`
 `
-const HomeWrap = Styled.div `
+
+const HomeWrap = Styled.div`
   width: 100%
   height: auto
   background: #C9D787
 `
-const Header = Styled.div `
+
+const Header = Styled.div`
   background: #C9D787;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -46,14 +50,16 @@ const Header = Styled.div `
     font-size: 30px;
   }
 `
-const Footer = Styled.div `
+
+const Footer = Styled.div`
   background: whitesmoke;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 50px;
   position: relative;
 `
-const InnerHeader = Styled.div `
+
+const InnerHeader = Styled.div`
   position: absolute;
   top: 0px;
   left: 10px;
@@ -65,19 +71,20 @@ const InnerHeader = Styled.div `
 class Crate extends Component {
   constructor() {
     super()
-
     this.state = {
       modalIsOpen: false,
-      isLoading: false,
+      isLoading: null,
       records: [],
       record: {
         artist: '',
         title: '',
         bpm: '',
-        _id: undefined
+        _id: null
       }
     }
 
+    // This is the WebTask URL which holds my API functions, built with Express
+    // I went serverless because of scalability
     this.apiUrl =
       'https://wt-9a68b7561f2b06edc6765339cbf4ef71-0.sandbox.auth0-extend.com/recordsdb/records'
     this.openModal = this.openModal.bind(this)
@@ -87,7 +94,6 @@ class Crate extends Component {
   }
 
   componentDidMount() {
-    this.setState({ isLoading: true })
     Axios.get(this.apiUrl).then(({ data }) => {
       this.setState({ records: data })
       this.setState({ isLoading: false })
@@ -130,7 +136,7 @@ class Crate extends Component {
         artist: '',
         title: '',
         bpm: '',
-        _id: undefined
+        _id: null
       }
     })
   }
@@ -158,19 +164,33 @@ class Crate extends Component {
             <Header>
               <Particles />
               <InnerHeader>
-              <h1>Crateless</h1>
-              <p>(This app is currently in development, with the intial model projected to be completed by winter 2018. The site was created in ≈10 hours, including the serverless API)</p>
+                <h1>Crateless</h1>
+                <p>
+                  (This app is currently in development, with the intial model
+                  projected to be completed by winter 2018. The site was created
+                  in ≈10 hours, including the serverless API)
+                </p>
               </InnerHeader>
             </Header>
-            <RecordList
-              records={this.state.records}
-              handleEdit={this.handleEdit}
-              handleDelete={this.handleDelete}
-            />
+            {!this.state.isLoading
+              ? <Loading />
+              :
+              <div>
+                <RecordList
+                  records={this.state.records}
+                  handleEdit={this.handleEdit}
+                  handleDelete={this.handleDelete}
+                />
 
-            <Footer>
-              <Button right title="+" handleClick={this.openModal.bind(this, null)} />
-            </Footer>
+                <Footer>
+                  <Button
+                    right
+                    title="+"
+                    handleClick={this.openModal.bind(this, null)}
+                  />
+                </Footer>
+              </div>
+            }
           </WrapItem>
         </AppWrap>
 

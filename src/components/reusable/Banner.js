@@ -1,7 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
 
-// In this Banner Style I use a bit of logic to define colors and sizes
+// To handle options for my components I use simple logic in my CSS
 const Banner = Styled.div`
   display: flex
   justify-content: center
@@ -13,8 +13,8 @@ const Banner = Styled.div`
   text-transform: uppercase;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   background-color: ${props => (props.light ? '#FF2D00' : '#D90000')};
-  width: ${props => (props.half ? '35rem' : 'inherit')};
-  color: ${props => (props.textColorWhite ? '#fff' : '#000000')};
+  width: ${props => (props.half ? '60rem' : 'inherit')};
+  color: ${props => (props.white ? '#fff' : '#000000')};
   margin: ${props => (props.hero ? '2rem 0rem;' : '2rem')};
   font-size: ${props => (props.hero ? '5em' : '2em')};
   text-shadow: ${props => (
@@ -24,6 +24,7 @@ const Banner = Styled.div`
   p {
     text-shadow: none;
     color: ${props => (props.hero ? '#fff' : '#000000')};
+    font-weight: 600;
   }
   
     img {
@@ -43,11 +44,11 @@ export default ({
   light, 
   img, 
   imgAlt, 
-  textColorWhite, 
+  white, 
   hero 
 }) => {
   return (
-    <Banner hero={hero} textColorWhite={textColorWhite} half={half} light={light}>
+    <Banner hero={hero} white={white} half={half} light={light}>
       <img src={img} alt={imgAlt} />
       <Inner>
         <h1>{innerTitle}</h1>
