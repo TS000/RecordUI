@@ -45,7 +45,7 @@ injectGlobal`
       }
 
     @media (min-width: 320px) {
-      font-size: calc(3px + 6 * ((100vw - 320px) / 680));
+      font-size: calc(4px + 6 * ((100vw - 320px) / 680));
     }
 
     @media screen and (min-width: 480px) {
