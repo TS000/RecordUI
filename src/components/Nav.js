@@ -10,8 +10,8 @@ const styles = {
     position: 'fixed',
     width: '36px',
     height: '30px',
-    left: '36px',
-    top: '36px'
+    left: '10px',
+    top: '10px'
   },
   bmBurgerBars: {
     background: '#fff'
@@ -50,7 +50,7 @@ const styles = {
 const LogoWrap = Styled.div `
 text-align: center;
   img {
-    width: 55;
+    width: 55px;
     padding: 5px;
 
     @media screen and (min-width: 1400px) {
@@ -66,11 +66,16 @@ const ItemWrap = Styled.div `
      padding: 1em;
      color: #000000;
      font-weight: 700
+     font-size: 4rem;
      transition: ease all .2s;
        &:hover {
          background: #2E0927;
          color: white;
        }
+
+        @media screen and (min-width: 1000px) {
+      font-size: 2rem;
+    }
 `
 
 export default class Nav extends Component {
