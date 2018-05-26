@@ -6,6 +6,8 @@ import Banner from '../components/reusable/Banner'
 
 // I designed and created all assets (minus Font Awesome)
 import imgRekids from '../img/rekids.png'
+import imgStack from '../img/stack.png'
+import imgHard from '../img/hard.png'
 
 const Row = Styled.div`
   display: flex
@@ -33,33 +35,20 @@ export default class Home extends Component {
           <CTA innerTitle="iOS & android" />
         </Row>
         <Row>
-          <Banner
-            light
-            innerTitle="take a photo of a record"
-            innerBody="automatically add it to your crate"
-          />
+          <Banner light half innerTitle="look for it" innerBody="q4 2018" />
+          <Banner light half img={imgStack} />
         </Row>
         <Row>
-          <CTA innerTitle="share" />
-          <CTA innerTitle="organize" />
-          <CTA innerTitle="any time" />
-          <CTA innerTitle="anywhere" />
+          <CTA small innerTitle="share" />
+          <CTA small innerTitle="organize" />
+          <CTA small innerTitle="any time" />
+          <CTA small innerTitle="anywhere" />
         </Row>
-        <Banner light innerTitle="a personal assitant for your vinyl collection" />
+        <Banner light innerTitle="a personal assistant for your vinyl collection" />
         <Row>
-          <CTA innerTitle="Science" />
-          <CTA innerTitle="Meets" />
-          <CTA innerTitle="Collection" />
-        </Row>
-        <Row>
-          <Banner light half innerTitle="Welcome" innerBody="this is a cta" />
-          <Banner light half innerTitle="Welcome" innerBody="this is also a cta" />
-        </Row>
-        <Row>
-          <CTA innerTitle="Your" />
-          <CTA innerTitle="Collection" />
-          <CTA innerTitle="At All" />
-          <CTA innerTitle="Times" />
+          <CTA img img={imgHard} />
+          <CTA innerTitle="meets" />
+          <CTA innerTitle="science" />
         </Row>
       </div>
     )

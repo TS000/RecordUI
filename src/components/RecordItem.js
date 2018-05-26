@@ -21,6 +21,7 @@ const RecordContent = Styled.div`
     }
     h3 {
       color: #FF005F;
+      font-size: 16px;
       position: absolute;
       right: 10px;
       top: -12px;
@@ -33,6 +34,10 @@ const RecordContent = Styled.div`
       position: relative;
       bottom: 15px;
     }
+
+    p {
+      font-size: 14px;
+    }
 `
 
 const RecordControl = Styled.div`
@@ -40,6 +45,7 @@ const RecordControl = Styled.div`
     float: right;
     right: 4px;
     bottom: 20px;
+    font-size: 16px;
     span:first-child  {
       margin-right: 5px;
 

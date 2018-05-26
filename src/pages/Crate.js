@@ -17,9 +17,14 @@ const AppWrap = Styled.div `
   position: absolute;
   margin: 0 auto;
   top: 10%;
-  width: 95%;
+  width: 320px;
   left: 0;
   right: 0;
+
+  @media screen and (min-width: 500px) {
+      width: 450px;
+    }
+
 }
 `
 const WrapItem = Styled.div`
@@ -34,7 +39,7 @@ const Header = Styled.div `
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding-bottom: 10px;
-  height: 100px;
+  height: 145px;
     h1 {
       color: #000000;
     letter-spacing: 1.6px;
@@ -52,6 +57,9 @@ const InnerHeader = Styled.div `
   position: absolute;
   top: 0px;
   left: 10px;
+    p {
+      font-size: 14px;
+    }
 `
 
 class Crate extends Component {

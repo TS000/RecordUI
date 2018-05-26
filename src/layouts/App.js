@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import Styled, { injectGlobal } from 'styled-components'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Crate from '../pages/Crate'
 import Home from '../pages/Home'
@@ -23,6 +19,7 @@ injectGlobal`
     height: 100%
     width: 100%
     margin: 0
+    padding: 0
     background: #FF8C00
     font-size: 16px
     font-family: 
@@ -36,12 +33,29 @@ injectGlobal`
       Helvetica Neue,
       sans-serif
 
+      body {
+        margin: 0
+        padding: 0
+      }
+
     @media (min-width: 320px) {
-      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+      font-size: calc(3px + 6 * ((100vw - 320px) / 680));
+    }
+
+    @media screen and (min-width: 480px) {
+      font-size: 5px;
+    }
+
+    @media screen and (min-width: 700px) {
+      font-size: 9px;
     }
 
     @media screen and (min-width: 1000px) {
-      font-size: 22px;
+      font-size: 9px;
+    }
+
+    @media screen and (min-width: 1400px) {
+      font-size: 14px;
     }
   }
 `
@@ -63,21 +77,21 @@ console.log(
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <FullWidth>
         <Router>
-        <div>
-        <Navigation />
-          <FullWidth>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/crate" component={Crate} />
-              <Route path="/*" component={ErrorPage} />
-            </Switch>
-          </FullWidth>
+          <div>
+            <Navigation />
+            
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/crate" component={Crate} />
+                <Route path="/*" component={ErrorPage} />
+              </Switch>
+           
           </div>
         </Router>
         <Footer />
-      </div>
+      </FullWidth>
     )
   }
 }

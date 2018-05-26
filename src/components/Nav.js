@@ -20,6 +20,10 @@ const Navigation = Styled.ul`
   border-bottom: 4px solid black
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
+  span {
+    font-size: 18px;
+  }
+
   a {
     text-decoration: none;
     display: block;
@@ -55,9 +59,14 @@ const Navigation = Styled.ul`
 `
 
 const LogoWrap = Styled.div `
+text-align: center;
   img {
-    width: 55px;
+    width: 40px;
     padding: 5px;
+
+    @media screen and (min-width: 1400px) {
+      width: 55px
+    }
 }
 `
 
@@ -71,12 +80,12 @@ export default () => {
           </li>
             <li>
               <NavLink exact to="/" activeClassName="active">
-                Home
+                <span>Home</span>
               </NavLink>
             </li>
             <li>
               <NavLink to="/crate" activeClassName="active">
-                Crate
+                <span>Crate</span>
               </NavLink>
             </li>
           </Navigation>

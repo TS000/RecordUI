@@ -7,12 +7,13 @@ const Banner = Styled.div`
   justify-content: center
   align-items: center
   height: 10em
+  position: relative;
   border: 4px solid black
   overflow: hidden;
   text-transform: uppercase;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   background-color: ${props => (props.light ? '#FF2D00' : '#D90000')};
-  width: ${props => (props.half ? '34rem' : 'inherit')};
+  width: ${props => (props.half ? '35rem' : 'inherit')};
   color: ${props => (props.textColorWhite ? '#fff' : '#000000')};
   margin: ${props => (props.hero ? '2rem 0rem;' : '2rem')};
   font-size: ${props => (props.hero ? '5em' : '2em')};
@@ -33,7 +34,6 @@ const Inner = Styled.div`
   position: absolute
   margin: 0 auto
   text-align: center
-  font-size: 100%
 `
 
 export default ({ 
