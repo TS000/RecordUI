@@ -10,8 +10,8 @@ const styles = {
     position: 'fixed',
     width: '36px',
     height: '30px',
-    left: '10px',
-    top: '10px'
+    left: '35px',
+    top: '35px'
   },
   bmBurgerBars: {
     background: '#fff'
@@ -24,7 +24,7 @@ const styles = {
     background: '#fff'
   },
   bmMenu: {
-    background: '#04756f',
+    background: '#C9D787',
     padding: '2.5em 1.5em 0',
     fontSize: '1.15em',
     overflow: 'hidden'
@@ -69,34 +69,59 @@ const ItemWrap = Styled.div `
      font-size: 4rem;
      transition: ease all .2s;
        &:hover {
-         background: #2E0927;
-         color: white;
+         color: #FFF;
        }
 
         @media screen and (min-width: 1000px) {
       font-size: 2rem;
+      padding: .5rem;
     }
 `
 
 export default class Nav extends Component {
+  // Controlling state to close the menu when a Nav link is selected
+  constructor(props) {
+    super(props)
+    this.state = {
+      menuOpen: false
+    }
+  }
+
+  handleStateChange(state) {
+    this.setState({ menuOpen: state.isOpen })
+  }
+
+  closeMenu() {
+    this.setState({ menuOpen: false })
+  }
+
   render() {
     return (
-      <Menu width={250} styles={styles}>
+      <Menu 
+        isOpen={this.state.menuOpen}
+        onStateChange={(state) => this.handleStateChange(state)}
+        width={250} styles={styles}>
         <LogoWrap>
           <img src={Logo} alt="Logo" />
         </LogoWrap>
         <ItemWrap>
-          <NavLink exact to="/" activeClassName="active">
+          <NavLink 
+            onClick={() => this.closeMenu()}
+            exact to="/" activeClassName="active">
             <span>Home</span>
           </NavLink>
         </ItemWrap>
         <ItemWrap>
-          <NavLink to="/crate" activeClassName="active">
-            <span>Crate</span>
+          <NavLink
+            onClick={() => this.closeMenu()}
+            to="/crateless" activeClassName="active">
+            <span>Crateless</span>
           </NavLink>
         </ItemWrap>
         <ItemWrap>
-          <NavLink to="/about" activeClassName="active">
+          <NavLink
+            onClick={() => this.closeMenu()}
+            to="/about" activeClassName="active">
             <span>About</span>
           </NavLink>
         </ItemWrap>

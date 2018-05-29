@@ -12,7 +12,7 @@ export default class ShinyBits extends React.Component {
               h: '100%'
             },
             number: {
-              value: 1,
+              value: 10,
               density: {
                 enable: true,
                 value_area: '20rem'

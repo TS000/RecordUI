@@ -17,7 +17,7 @@ const customStyles = {
   }
 }
 const ModalWrap = Styled.div`
-  width: 600px !important
+  width: 265px
 `
 const ModalTitle = Styled.div`
   text-align: text-center

@@ -3,6 +3,7 @@ import Styled from 'styled-components'
 
 import CTA from '../components/reusable/CTA'
 import Banner from '../components/reusable/Banner'
+import Particles from  '../components/reusable/Particles'
 
 // All images have been compressed with Image Magick
 import imgRekids from '../img/rekids.png'

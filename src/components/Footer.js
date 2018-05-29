@@ -5,7 +5,7 @@ import Styled from 'styled-components'
 const Footer = Styled.div`
 list-style: none;
   margin: 0;
-  height: 50px;
+  height: 65px;
   background: #2E0927;
   display: flex;
   flex-flow: row wrap;
@@ -19,6 +19,7 @@ list-style: none;
     display: block;
     padding: 1em;
     color: #fff;
+    font-size: 14px;
     font-weight: 700
     transition: ease all .2s;
       &:hover {
@@ -32,10 +33,11 @@ list-style: none;
     }
   }
 
-@media (max-width: 600px) {
-
+@media (max-width: 700px) {
+  height: initial;
   flex-flow: column wrap;
   padding: 0;
+  border-top: none;
     a {
       text-align: center;
       padding: 10px;
@@ -49,7 +51,7 @@ list-style: none;
 
 `
 
-export default ({ innerTitle, innerBody, half, light }) => {
+export default ({ half, light }) => {
   return (
     <div>
       <Footer half={half} light={light}>

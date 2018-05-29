@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Styled, { injectGlobal } from 'styled-components'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import Crate from '../pages/Crate'
+import Crateless from '../pages/Crateless'
 import Home from '../pages/Home'
 import About from '../pages/About'
 import ErrorPage from '../pages/Error'
@@ -80,24 +80,35 @@ export default class App extends Component {
   render() {
     return (
       <div>
-      <FullWidth>
-        <Router>
-          <div>
-            <Navigation />
-            
+        <FullWidth>
+          <Router>
+            <div>
+              <Navigation />
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/crate" component={Crate} />
-                 <Route path="/about" component={About} />
-                <Route path="/*" component={ErrorPage} />
-              </Switch>
-  
-          </div>
-        </Router>
-      </FullWidth>
-       <Footer />
-       </div>
+                <Route path="/crateless" component={Crateless} />
+                <Route path="/about" component={About} />
+                <Route
+                  path="/admin"
+                  component={() =>
+                    (window.location =
+                      'https://www.youtube.com/watch?time_continue=116&v=dJRsWJqDjFE')
+                  }
+                />
 
+                <Route
+                  path="/wp-admin"
+                  component={() =>
+                    (window.location = 'https://youtu.be/djV11Xbc914?t=1m27s')
+                  }
+                />
+                <Route component={ErrorPage} />
+              </Switch>
+            </div>
+          </Router>
+        </FullWidth>
+        <Footer />
+      </div>
     )
   }
 }

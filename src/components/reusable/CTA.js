@@ -11,7 +11,7 @@ const CallToAction = Styled.div`
     margin: 20px
     padding: 0 20px;
     flex-wrap: wrap;
-    background-color: #D90000 
+    background-color: #FF2D00 
     text-transform: uppercase
     border: 4px solid black
     overflow: hidden
@@ -23,24 +23,23 @@ const CallToAction = Styled.div`
         position: absolute;
         left: 0;
         right: 0;
-        margin: 0 auto;
+        margin: 0 20px;
         font-size: 4rem;
         color: ${props => (props.white ? '#fff' : '#000000')};
 
         @media (min-width: 600px) {
-          margin: 0;
           font-size: 2rem;
       }
 
       img {
         width: 150%;
-        
+        transition: ease all .2s;
+
         @media (min-width: 600px) {
           width: 160%;
           }
 
         &:hover {
-          transition: ease all .2s;
           background: rgba(0,0,0,.5);
         }
       }

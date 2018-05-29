@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import Styled from 'styled-components'
+import FontAwesome from 'react-fontawesome'
 
 import Button from '../components/reusable/Button'
 import Loading from '../components/reusable/Loading'
@@ -13,10 +14,10 @@ const AppWrap = Styled.div`
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   border-radius: 10px;
-  margin-top: 70px;
   padding: 0;
   position: relative;
-  margin: 50px auto;
+  margin: 0 auto;
+  top: 80px;
   width: 320px;
   left: 0;
   right: 0;
@@ -26,15 +27,6 @@ const AppWrap = Styled.div`
     }
 
 }
-`
-
-const WrapItem = Styled.div`
-`
-
-const HomeWrap = Styled.div`
-  width: 100%
-  height: auto
-  background: #C9D787
 `
 
 const Header = Styled.div`
@@ -62,17 +54,23 @@ const InnerHeader = Styled.div`
   position: absolute;
   top: 0px;
   left: 10px;
+  margin: 0 20px;
     p {
       font-size: 14px;
+      text-align: center;
     }
 `
 
-class Crate extends Component {
+const LoadingWrap = Styled.div`
+  padding: 30px;
+`
+
+export default class Crate extends Component {
   constructor() {
     super()
     this.state = {
       modalIsOpen: false,
-      isLoading: null,
+      isLoading: true,
       records: [],
       record: {
         artist: '',
@@ -156,22 +154,27 @@ class Crate extends Component {
   }
 
   render() {
+    const { isLoading } = this.state
     return (
-      <HomeWrap>
-        <AppWrap>
-          <WrapItem>
-            <Header>
-              <Particles />
-              <InnerHeader>
-                <h1>Crateless</h1>
-                <p>
-                  (This app is currently in development, with the intial model
-                  projected to be completed by winter 2018. The site was created
-                  in ≈15 hours, including the serverless API)
-                </p>
-              </InnerHeader>
-            </Header>
-            
+      <AppWrap>
+        <Header>
+          <Particles />
+          <InnerHeader>
+            <h1>Crateless</h1>
+            <p>
+              This app is currently in development, with the intial AI model
+              projected to be completed by winter 2018. The site was created in
+              ≈15 hours, including the serverless API. The DB is active, feel
+              free to play around. <FontAwesome spin name="rocket" />
+            </p>
+          </InnerHeader>
+        </Header>
+        {isLoading ? (
+          <LoadingWrap>
+            <Loading />
+          </LoadingWrap>
+        ) : (
+          <div>
             <RecordList
               records={this.state.records}
               handleEdit={this.handleEdit}
@@ -185,17 +188,14 @@ class Crate extends Component {
                 handleClick={this.openModal.bind(this, null)}
               />
             </Footer>
-          </WrapItem>
-        </AppWrap>
-
+          </div>
+        )}
         <RecordModal
           modalIsOpen={this.state.modalIsOpen}
           record={this.state.record}
           closeModal={this.closeModal}
         />
-      </HomeWrap>
+      </AppWrap>
     )
   }
 }
-
-export default Crate
