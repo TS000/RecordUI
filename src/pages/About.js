@@ -6,9 +6,7 @@ import Logo from '../img/cloud.png'
 const AboutWrap = Styled.div`
     padding: 5rem 20rem
 
-    @media screen and (max-width: 480px) {
-            padding: 15rem 6rem;
-            h1 {
+    h1 {
                 font-size: 4rem
             }
 
@@ -26,6 +24,28 @@ const AboutWrap = Styled.div`
 
             li {
                 font-size: 2rem
+            }
+
+    @media screen and (max-width: 700px) {
+            padding: 15rem 6rem;
+            h1 {
+                font-size: 6rem
+            }
+
+            h3 {
+                font-size: 5rem
+            }
+
+            h4 {
+                font-size: 4rem
+            }
+
+            p {
+                font-size: 4rem
+            }
+
+            li {
+                font-size: 4rem
             }
     }
 `
@@ -56,7 +76,7 @@ const AboutPage = () => {
             <LogoWrap>
               <img src={Logo} alt="Logo" />
             </LogoWrap>
-            <h1>Crateless - Why?</h1>
+            <h1>Crateless - <Italic>Why?</Italic></h1>
             <p>
                 The world of vinyl collecting is expensive, frustrating, and
                 time consuming. <Bold>Crateless</Bold> solves each of these
@@ -100,7 +120,7 @@ const AboutPage = () => {
                 be presented in a view that allows the user to keep track of
                 their top 10.
             </p>
-            <p />
+            <h4>Look for Crateless on iOS and Andround Q4 of 2018.</h4>
         </AboutWrap>
     )
 }
