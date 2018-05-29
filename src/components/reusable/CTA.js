@@ -1,6 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
 
+// To handle options for my components I use simple logic in my CSS
 const CallToAction = Styled.div`
     display: flex;
     justify-content: center;
@@ -24,7 +25,7 @@ const CallToAction = Styled.div`
         left: 0;
         right: 0;
         margin: 0 20px;
-        font-size: 4rem;
+        font-size: 3rem;
         color: ${props => (props.white ? '#fff' : '#000000')};
 
         @media (min-width: 600px) {

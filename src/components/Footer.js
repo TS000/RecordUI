@@ -23,7 +23,7 @@ list-style: none;
     font-weight: 700
     transition: ease all .2s;
       &:hover {
-        background: #04756F;
+        background: #c9d787;
         color: #000000;
       }
 

@@ -40,6 +40,10 @@ const Header = Styled.div`
     letter-spacing: 1.6px;
     font-size: 30px;
   }
+
+  @media screen and (max-width: 480px) {
+      height: 200px;
+    }
 `
 
 const Footer = Styled.div`
@@ -90,6 +94,7 @@ export default class Crate extends Component {
     this.handleDelete = this.handleDelete.bind(this)
   }
 
+  // Page loads and information is pulled from my DB
   componentDidMount() {
     Axios.get(this.apiUrl).then(({ data }) => {
       this.setState({ records: data })
@@ -97,6 +102,7 @@ export default class Crate extends Component {
     })
   }
 
+  // Opens the modal that holds the form for updating records
   openModal(record) {
     this.setState({ modalIsOpen: true })
     if (record) {
@@ -104,6 +110,7 @@ export default class Crate extends Component {
     }
   }
 
+  // Handles updating the DB
   closeModal(model) {
     this.setState({ modalIsOpen: false })
     if (model) {
@@ -128,6 +135,8 @@ export default class Crate extends Component {
         })
       }
     }
+
+    // Update the state after the records are added
     this.setState({
       record: {
         artist: '',

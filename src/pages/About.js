@@ -5,6 +5,29 @@ import Logo from '../img/cloud.png'
 
 const AboutWrap = Styled.div`
     padding: 5rem 20rem
+
+    @media screen and (max-width: 480px) {
+            padding: 20rem 6rem;
+            h1 {
+                font-size: 4rem
+            }
+
+            h3 {
+                font-size: 3rem
+            }
+
+            h4 {
+                font-size: 2rem
+            }
+
+            p {
+                font-size: 2rem
+            }
+
+            li {
+                font-size: 2rem
+            }
+    }
 `
 
 const LogoWrap = Styled.div `
