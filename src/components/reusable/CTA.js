@@ -1,6 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // To handle options for my components I use simple logic in my CSS
 const CallToAction = Styled.div`
@@ -49,15 +49,13 @@ const CallToAction = Styled.div`
 
 export default ({ innerTitle, img, white, imgAlt, small }) => {
   return (
-    <NavLink
-      onClick={() => this.closeMenu()}
+    <Link
       to="/about"
-      activeClassName="active"
     >
       <CallToAction white={white} small={small}>
         <img src={img} alt={imgAlt} />
         <h2>{innerTitle}</h2>
       </CallToAction>
-    </NavLink>
+    </Link>
   )
 }
