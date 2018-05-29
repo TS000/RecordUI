@@ -17,7 +17,7 @@ const Banner = Styled.div`
   color: ${props => (props.white ? '#fff' : '#000000')};
   margin: ${props => (props.hero ? '0rem;' : '2rem')};
   font-size: ${props => (props.hero ? '4em' : '2em')};
-  font-family: ${props => (props.hero ? 'Lato' : 'open-sans')};
+  font-family: ${props => (props.hero ? 'Lato' : 'inherit')};
   text-shadow: ${props => (
     props.hero ? '3px 6px 0px rgba(0,0,0,0.85)' : 'initial'
   )};
