@@ -46,7 +46,7 @@ injectGlobal`
     }
 
     @media screen and (min-width: 480px) {
-      font-size: 5px;
+      font-size: 9px;
     }
 
     @media screen and (min-width: 700px) {

@@ -35,7 +35,7 @@ const CallToAction = Styled.div`
         color: ${props => (props.white ? '#fff' : '#000000')};
 
         @media (min-width: 600px) {
-          font-size: 2rem;
+          font-size: 3rem;
       }
 
       img {
