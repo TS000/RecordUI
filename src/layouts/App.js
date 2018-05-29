@@ -76,6 +76,8 @@ console.log(
   'font-family:monospace'
 )
 
+// React Router is my favorite way of managing views.
+// Try navigating to a random relative path or attempt to log into the /admin or /wp-admin :)
 export default class App extends Component {
   render() {
     return (
@@ -95,7 +97,6 @@ export default class App extends Component {
                       'https://www.youtube.com/watch?time_continue=116&v=dJRsWJqDjFE')
                   }
                 />
-
                 <Route
                   path="/wp-admin"
                   component={() =>
