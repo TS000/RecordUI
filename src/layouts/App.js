@@ -8,6 +8,7 @@ import About from '../pages/About'
 import ErrorPage from '../pages/Error'
 import Footer from '../components/Footer'
 import Navigation from '../components/Nav'
+import ScrollToTop from '../components/ScrollToTop'
 
 const FullWidth = Styled.div`
   width: 100%;
@@ -84,7 +85,7 @@ export default class App extends Component {
       <div>
         <FullWidth>
           <Router>
-            <div>
+          <ScrollToTop>
               <Navigation />
               <Switch>
                 <Route exact path="/" component={Home} />
@@ -105,7 +106,7 @@ export default class App extends Component {
                 />
                 <Route component={ErrorPage} />
               </Switch>
-            </div>
+            </ScrollToTop>
           </Router>
         </FullWidth>
         <Footer />
