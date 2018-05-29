@@ -120,7 +120,7 @@ const AboutPage = () => {
                 be presented in a view that allows the user to keep track of
                 their top 10.
             </p>
-            <h4>Look for Crateless on iOS and Andround Q4 of 2018.</h4>
+            <h4>Look for Crateless on iOS and Android Q4 of 2018.</h4>
         </AboutWrap>
     )
 }
