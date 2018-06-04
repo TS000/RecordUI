@@ -78,7 +78,7 @@ const AboutPage = () => {
             </LogoWrap>
             <h1>Crateless - <Italic>Why?</Italic></h1>
             <p>
-                The world of vinyl collecting is expensive, frustrating, and
+                The world of vinyl collecting can be expensive, frustrating, and
                 time consuming. <Bold>Crateless</Bold> solves each of these
                 issues with <Bold>Deep Learning</Bold> and{' '}
                 <Bold>The Cloud</Bold>.
@@ -106,19 +106,18 @@ const AboutPage = () => {
                 The way <Bold>Crateless</Bold> adds a record to your collection
                 starts with taking a photo of a record. The photo is then either
                 automatically matched to it's information or if{' '}
-                <Bold>Crateless</Bold> thinks it's a new entry, asks the user to
+                <Bold>Crateless</Bold> thinks it's a new entry, asks the collector to
                 manually input information on the record. New entries expand{' '}
                 <Bold>Crateless'</Bold> database so that the next time that
                 record is checked, information is pulled.
             </p>
             <p>
-                Record price awareness is something record sellers are going to
-                love. <Bold>Crateless</Bold> checks the top 10 records in a
-                user's collection that are worth the most and keeps tabs on how
-                the record is doing in the world marketplace. Users will also be
-                able to simply search for price information but the top 10 will
-                be presented in a view that allows the user to keep track of
-                their top 10.
+                Record price awareness helps the collector keep track of their most 
+                expensive records. <Bold>Crateless</Bold> checks the top 10 records in a
+                collection that are worth the most and keeps tabs on how
+                those records is doing in the world marketplace. Collectors will also be
+                able to search for price information on any record but the top 10 will
+                be constantly updated.
             </p>
             <h4>Look for Crateless on iOS and Android Q4 of 2018.</h4>
         </AboutWrap>
