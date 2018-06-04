@@ -1,7 +1,6 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import Styled from 'styled-components'
-import MyErrorBoundry from './reusable/MyErrorBoundry'
 
 const Record = Styled.div`
   padding: 5px 5px;
@@ -40,6 +39,7 @@ const RecordContent = Styled.div`
       font-size: 14px;
     }
 `
+
 const RecordControl = Styled.div`
     position: relative;
     float: right;
@@ -70,22 +70,14 @@ export default class RecordItem extends React.Component {
       <Record>
         <RecordContent>
           <h4>{record.artist}</h4>
-          <p>
-            {record.title}
-            <span>{record.genre}</span>
-          </p>
+          <p>{record.title}<span>{record.genre}</span></p>
           <h3>{record.bpm}</h3>
+
         </RecordContent>
-        <MyErrorBoundry>
-          <RecordControl>
-            <span onClick={handleEdit.bind(this, record._id)}>
-              <FontAwesome name="edit" />
-            </span>
-            <span onClick={handleDelete.bind(this, record._id)}>
-              <FontAwesome name="trash" />
-            </span>
-          </RecordControl>
-        </MyErrorBoundry>
+        <RecordControl>
+          <span onClick={handleEdit.bind(this, record._id)} ><FontAwesome name='edit' /></span>
+          <span onClick={handleDelete.bind(this, record._id)}><FontAwesome name='trash' /></span>
+        </RecordControl>
       </Record>
     )
   }
