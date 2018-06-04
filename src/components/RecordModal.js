@@ -43,6 +43,9 @@ const ModalButtonClose = ModalButton.extend`
 const LabelWrap = Styled.div`
   display: inline-block;
   margin-left: 20px;
+  label {
+    font-size: 14px;
+  }
   input {
     border: 1px solid #bebebe;
     margin: 15px;
