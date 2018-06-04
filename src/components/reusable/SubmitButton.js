@@ -23,15 +23,5 @@ const CoolInput = styled.input`
     }
 `
 
-export default class SubmitButton extends React.Component {
-  render() {
-    return (
-      <CoolInput
-        value={this.props.value}
-        id={this.props.id}
-        type={this.props.type}
-        disabled={this.props.disabled}
-      />
-    )
-  }
-}
+export default ({ value, id, type, disabled }) =>
+  <CoolInput value={value} id={id} type={type} disabled={disabled}/>

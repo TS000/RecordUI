@@ -1,6 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import MyErrorBoundry from './MyErrorBoundry'
 
 // To handle options for my components I use simple logic in my CSS
 const CallToAction = Styled.div`
@@ -54,13 +55,13 @@ const CallToAction = Styled.div`
 
 export default ({ innerTitle, img, white, imgAlt, small }) => {
   return (
-    <Link
-      to="/about"
-    >
-      <CallToAction white={white} small={small}>
-        <img src={img} alt={imgAlt} />
-        <h2>{innerTitle}</h2>
-      </CallToAction>
+    <Link to="/about">
+      <MyErrorBoundry>
+        <CallToAction white={white} small={small}>
+          <img src={img} alt={imgAlt} />
+          <h2>{innerTitle}</h2>
+        </CallToAction>
+      </MyErrorBoundry>
     </Link>
   )
 }
