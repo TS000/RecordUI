@@ -47,21 +47,18 @@ export default class Home extends Component {
         <Row>
           <CTA
             innerTitle="price alerts"
-            img
             white
             imgAlt="Tyler Snow at Weird Touch"
             img={imgTyler}
           />
           <CTA
             innerTitle="collection control"
-            img
             white
             imgAlt="Condessa Mixers"
             img={imgCondesa}
           />
           <CTA
             innerTitle="iOS & android"
-            img
             white
             imgAlt="Hard Wax Berlin listening stations"
             img={imgHard}
@@ -80,21 +77,18 @@ export default class Home extends Component {
         <Row>
           <CTA
             innerTitle="1. take a photo of a record"
-            img
             white
             imgAlt="Records in a imgCrate"
             img={imgCrate}
           />
           <CTA
             innerTitle="2. updates your crate"
-            img
             white
             imgAlt="Ortofon and Technics 1200mk5"
             img={imgOrto}
           />
           <CTA
             innerTitle="3. instant info on your record"
-            img
             white
             imgAlt="Stack of vinyl records"
             img={imgTylerDJ}
@@ -112,24 +106,20 @@ export default class Home extends Component {
         <Row>
           <CTA
             innerTitle="4. check market prices"
-            img
             white
             imgAlt="Condessa Mixers"
             img={imgCondesa}
           />
           <CTA
             innerTitle="5. order records"
-            img
             white
-            imgAlt=""
             imgAlt="Hard Wax Berlin listening stations"
             img={imgHard}
           />
           <CTA
             innerTitle="6. sell records"
-            img
             white
-            imgAlt="Tyler Snow at Weird Touch"
+            imgAlt="Tyler Snow at Weird Touch2"
             img={imgTyler}
           />
         </Row>
