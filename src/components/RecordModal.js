@@ -1,9 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal'
 import Styled from 'styled-components'
-
-// Modal custom styles
-// Basically centering stuff
+import MyErrorBoundry from './reusable/MyErrorBoundry'
 
 const customStyles = {
   content: {
@@ -38,11 +36,10 @@ const ModalButton = Styled.button`
   outline: none
 `
 
-//extending CSS classes is awesome
+// extending CSS classes is awesome
 const ModalButtonClose = ModalButton.extend`
-  background: #F44336;
+  background: #f44336;
 `
-
 const LabelWrap = Styled.div`
   display: inline-block;
   margin-left: 20px;
@@ -77,18 +74,12 @@ export default class RecordModal extends React.Component {
     if (e.target.id === 'title') {
       this.setState({ title: e.target.value })
     }
-     if (e.target.id === 'bpm') {
+    if (e.target.id === 'bpm') {
       this.setState({ bpm: e.target.value })
     }
     if (e.target.id === 'genre') {
       this.setState({ genre: e.target.value })
     }
-  }
-
-  componentWillReceiveProps({ record }) {
-    // Update record state anytime
-    // a new props is passed to the Modal
-    this.setState(record)
   }
 
   render() {
@@ -101,57 +92,59 @@ export default class RecordModal extends React.Component {
         contentLabel="Record Modal"
         style={customStyles}
       >
-        <ModalWrap>
-          <ModalTitle>Record Info</ModalTitle>
-          <div>
-            <form>
-              <LabelWrap>
-                <label>Artist</label>
-                <input
-                  type="text"
-                  value={this.state.artist}
-                  onChange={this.handleInputChange}
-                  id="artist"
-                />
-              </LabelWrap>
-              <LabelWrap>
-                <label>Title</label>
-                <input
-                  value={this.state.title}
-                  onChange={this.handleInputChange}
-                  cols="30"
-                  id="title"
-                />
-              </LabelWrap>
-              <LabelWrap>
-                <label>Genre</label>
-                <input
-                  value={this.state.genre}
-                  onChange={this.handleInputChange}
-                  cols="30"
-                  id="genre"
-                />
-              </LabelWrap>
-               <LabelWrap>
-                <label>BPM</label>
-                <input
-                  value={this.state.bpm}
-                  onChange={this.handleInputChange}
-                  cols="30"
-                  id="bpm"
-                />
-              </LabelWrap>
-              <div>
-                <ModalButton onClick={closeModal.bind(this, this.state)}>
-                  Save
-                </ModalButton>
-                <ModalButtonClose onClick={closeModal.bind(this, null)}>
-                  Cancel
-                </ModalButtonClose>
-              </div>
-            </form>
-          </div>
-        </ModalWrap>
+        <MyErrorBoundry>
+          <ModalWrap>
+            <ModalTitle>Record Info</ModalTitle>
+            <div>
+              <form>
+                <LabelWrap>
+                  <label>Artist</label>
+                  <input
+                    type="text"
+                    value={this.state.artist}
+                    onChange={this.handleInputChange}
+                    id="artist"
+                  />
+                </LabelWrap>
+                <LabelWrap>
+                  <label>Title</label>
+                  <input
+                    value={this.state.title}
+                    onChange={this.handleInputChange}
+                    cols="30"
+                    id="title"
+                  />
+                </LabelWrap>
+                <LabelWrap>
+                  <label>Genre</label>
+                  <input
+                    value={this.state.genre}
+                    onChange={this.handleInputChange}
+                    cols="30"
+                    id="genre"
+                  />
+                </LabelWrap>
+                <LabelWrap>
+                  <label>BPM</label>
+                  <input
+                    value={this.state.bpm}
+                    onChange={this.handleInputChange}
+                    cols="30"
+                    id="bpm"
+                  />
+                </LabelWrap>
+                <div>
+                  <ModalButton onClick={closeModal.bind(this, this.state)}>
+                    Save
+                  </ModalButton>
+                  <ModalButtonClose onClick={closeModal.bind(this, null)}>
+                    Cancel
+                  </ModalButtonClose>
+                </div>
+              </form>
+            </div>
+          </ModalWrap>
+        </MyErrorBoundry>
       </Modal>
     )
   }

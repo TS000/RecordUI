@@ -58,6 +58,7 @@ text-align: center;
     }
 }
 `
+
 const ItemWrap = Styled.div `
   a {
      text-decoration: none;

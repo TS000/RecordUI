@@ -28,7 +28,6 @@ const AppWrap = Styled.div`
 
 }
 `
-
 const Header = Styled.div`
   background: #C9D787;
   border-top-left-radius: 10px;
@@ -45,7 +44,6 @@ const Header = Styled.div`
       height: 200px;
     }
 `
-
 const Footer = Styled.div`
   background: whitesmoke;
   border-bottom-left-radius: 10px;
@@ -53,7 +51,6 @@ const Footer = Styled.div`
   height: 50px;
   position: relative;
 `
-
 const InnerHeader = Styled.div`
   position: absolute;
   top: 0px;
@@ -64,7 +61,6 @@ const InnerHeader = Styled.div`
       text-align: center;
     }
 `
-
 const LoadingWrap = Styled.div`
   padding: 30px;
 `

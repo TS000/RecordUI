@@ -1,5 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
+import MyErrorBoundry from './MyErrorBoundry'
 
 // To handle options for my components I use simple logic in my CSS
 const Banner = Styled.div`
@@ -52,10 +53,12 @@ export default ({
   return (
     <Banner hero={hero} white={white} half={half} light={light}>
       <img src={img} alt={imgAlt} />
+      <MyErrorBoundry>
       <Inner>
         <h1>{innerTitle}</h1>
         <p>{innerBody}</p>
       </Inner>
+      </MyErrorBoundry>
     </Banner>
   )
 }
