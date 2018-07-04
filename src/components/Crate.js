@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import Styled from 'styled-components'
-import FontAwesome from 'react-fontawesome'
 
 import Button from '../components/reusable/Button'
 import Loading from '../components/reusable/Loading'
@@ -33,7 +32,7 @@ const Header = Styled.div`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding-bottom: 10px;
-  height: 145px;
+  height: 61px;
     h1 {
       color: #000000;
     letter-spacing: 1.6px;
@@ -166,12 +165,6 @@ export default class Crate extends Component {
           <Particles />
           <InnerHeader>
             <h1>Crateless</h1>
-            <p>
-              This app is currently in development, with the intial AI model
-              projected to be completed by winter 2018. The site was created in
-              ≈15 hours, including the serverless API. The DB is active, feel
-              free to play around. <FontAwesome spin name="rocket" />
-            </p>
           </InnerHeader>
         </Header>
         {isLoading ? (
