@@ -47,7 +47,7 @@ const styles = {
   }
 }
 
-const LogoWrap = Styled.div `
+const LogoWrap = Styled.div`
 text-align: center;
   img {
     width: 55px;
@@ -59,7 +59,7 @@ text-align: center;
 }
 `
 
-const ItemWrap = Styled.div `
+const ItemWrap = Styled.div`
   a {
      text-decoration: none;
      display: block;
@@ -97,31 +97,31 @@ export default class Nav extends Component {
 
   render() {
     return (
-      <Menu 
+      <Menu
         isOpen={this.state.menuOpen}
-        onStateChange={(state) => this.handleStateChange(state)}
-        width={250} styles={styles}>
+        onStateChange={state => this.handleStateChange(state)}
+        width={250}
+        styles={styles}
+      >
         <LogoWrap>
-          <img src={Logo} alt="Logo" />
+          <img src={Logo} alt='Logo' />
         </LogoWrap>
         <ItemWrap>
-          <NavLink 
-            onClick={() => this.closeMenu()}
-            exact to="/" activeClassName="active">
+          <NavLink onClick={() => this.closeMenu()} exact to='/' activeClassName='active'>
             <span>Home</span>
           </NavLink>
         </ItemWrap>
         <ItemWrap>
+          {/*
           <NavLink
             onClick={() => this.closeMenu()}
             to="/crateless" activeClassName="active">
             <span>Crateless</span>
           </NavLink>
+        */}
         </ItemWrap>
         <ItemWrap>
-          <NavLink
-            onClick={() => this.closeMenu()}
-            to="/about" activeClassName="active">
+          <NavLink onClick={() => this.closeMenu()} to='/about' activeClassName='active'>
             <span>About</span>
           </NavLink>
         </ItemWrap>
