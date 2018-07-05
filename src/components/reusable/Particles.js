@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Particles from 'react-particles-js'
 
-export default class ShinyBits extends React.Component {
+export default class ShinyBits extends Component {
   render() {
     return (
       <Particles
@@ -29,7 +29,7 @@ export default class ShinyBits extends React.Component {
               }
             },
             color: {
-              value: '#000000'
+              value: '#fff'
             },
             size: {
               value: 2,
@@ -42,9 +42,9 @@ export default class ShinyBits extends React.Component {
               }
             },
             line_linked: {
-              enable: true,
+              enable: false,
               distance: 150,
-              color: '#000000',
+              color: '#fff',
               opacity: 0.4,
               width: 1
             },
