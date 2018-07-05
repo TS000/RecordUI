@@ -68,7 +68,7 @@ export default class ShinyBits extends Component {
             events: {
               onhover: {
                 enable: true,
-                mode: 'grab'
+                mode: 'push'
               },
               onclick: {
                 enable: true,
