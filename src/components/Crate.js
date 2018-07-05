@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Axios from 'axios'
 import Styled from 'styled-components'
 
@@ -33,6 +33,10 @@ const Header = Styled.div`
   border-top-right-radius: 10px;
   padding-bottom: 10px;
   height: 61px;
+  overflow: hidden;
+  -webkit-user-select: none;        
+  -moz-user-select: none;
+  -ms-user-select: none;
     h1 {
       color: #000000;
     letter-spacing: 1.6px;
@@ -117,12 +121,12 @@ export default class Crate extends Component {
         })
       } else {
         Axios.put(`${this.apiUrl}?id=${model._id}`, model).then(({ data }) => {
-          const recordToUpdate = this.state.records.find(
-            x => x._id === model._id
-          )
+          const recordToUpdate = this.state.records.find(x => x._id === model._id)
           const updatedRecord = Object.assign({}, recordToUpdate, data)
           const newRecords = this.state.records.map(record => {
-            if (data._id === record._id) return updatedRecord
+            if (data._id === record._id) {
+              return updatedRecord
+            }
             return record
           })
           this.setState({ records: newRecords })
@@ -164,7 +168,7 @@ export default class Crate extends Component {
         <Header>
           <Particles />
           <InnerHeader>
-            <h1>Crateless</h1>
+            <h1>Crate</h1>
           </InnerHeader>
         </Header>
         {isLoading ? (
@@ -172,7 +176,7 @@ export default class Crate extends Component {
             <Loading />
           </LoadingWrap>
         ) : (
-          <div>
+          <Fragment>
             <RecordList
               records={this.state.records}
               handleEdit={this.handleEdit}
@@ -180,13 +184,9 @@ export default class Crate extends Component {
             />
 
             <Footer>
-              <Button
-                right
-                title="+"
-                handleClick={this.openModal.bind(this, null)}
-              />
+              <Button right title='+' handleClick={this.openModal.bind(this, null)} />
             </Footer>
-          </div>
+          </Fragment>
         )}
         <RecordModal
           modalIsOpen={this.state.modalIsOpen}
