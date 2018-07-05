@@ -12,11 +12,7 @@ const RecordList = Styled.div`
 // clearfix
 export default ({ records, handleEdit, handleDelete }) => (
   <RecordList>
-    <FlipMove
-      duration={350}
-      easing='ease-in-out'
-      enterAnimation='accordionHorizontal'
-    >
+    <FlipMove duration={350} easing='ease-in-out' enterAnimation='accordionHorizontal'>
       {records.map(record => (
         <RecordItem
           record={record}
